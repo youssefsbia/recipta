@@ -4,12 +4,13 @@ import axiosInstance from '../api/axiosInstance';
 import {useWishlistStore} from '../store/useWishlistStore';
 import {useNavigation} from '@react-navigation/native';
 import RecipeItem from '../components/RecipeItem';
+import { useTranslation } from 'react-i18next';
 
 const WishlistScreen = () => {
   const [recipes, setRecipes] = useState([]);
   const navigation = useNavigation();
   const {wishlist, addToWishlist, removeFromWishlist} = useWishlistStore();
-
+  const {t} = useTranslation();
   useEffect(() => {
     const fetchWishlistRecipes = async () => {
       try {
@@ -49,7 +50,7 @@ const WishlistScreen = () => {
   if (!recipes.length) {
     return (
       <View className="flex-1 justify-center items-center">
-        <Text>No items in your wishlist.</Text>
+        <Text>{t('noWishesFound')}</Text>
       </View>
     );
   }

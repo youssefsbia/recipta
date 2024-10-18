@@ -8,11 +8,12 @@ import HomeScreen from './screens/HomeScreen';
 import RecipeDetailScreen from './screens/RecipeDetailScreen';
 import {useAuthStore} from './store/useAuthStore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useTranslation} from 'react-i18next';
 
 const Stack = createNativeStackNavigator();
-
 const App = () => {
   const setTokens = useAuthStore(state => state.setTokens);
+  const {t} = useTranslation();
 
   const loadTokens = async () => {
     const accessToken = await AsyncStorage.getItem('accessToken');
@@ -33,13 +34,21 @@ const App = () => {
           component={SplashScreen}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{title: t('login')}}
+        />
         <Stack.Screen
           name="Home"
           component={HomeScreen}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="RecipeDetail" component={RecipeDetailScreen} />
+        <Stack.Screen
+          name="RecipeDetail"
+          component={RecipeDetailScreen}
+          options={{title: t('details')}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

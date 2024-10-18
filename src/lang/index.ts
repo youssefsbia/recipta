@@ -1,24 +1,15 @@
 import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-
+import {initReactI18next} from 'react-i18next';
+import en from './en.json';
+import fr from './fr.json';
 const resources = {
-  en: {
-    translation: {
-      welcome: "Welcome to RecipeApp",
-      login: "Login",
-      username: "Username",
-      password: "Password",
-      recipes: "Recipes",
-      wishlist: "Wishlist",
-    },
-  },
-  // Add other languages if needed
+  en, fr
 };
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'en', // Set default language
-  fallbackLng: 'en',
+  lng: 'fr', // Set default language
+  fallbackLng: 'fr',
   interpolation: {
     escapeValue: false,
   },

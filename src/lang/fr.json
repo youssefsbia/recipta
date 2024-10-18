@@ -1,0 +1,21 @@
+{
+  "translation": {
+    "welcome": "Bienvenue sur Recipta",
+    "login": "S'identifier",
+    "username": "Nom d'utilisateur",
+    "password": "Mot de passe",
+    "recipes": "Recettes",
+    "wishlist": "Liste de souhaits",
+    "noWishesFound": "Aucun élément dans votre liste de souhaits.",
+    "details": "Détails",
+    "home": "Accueil",
+    "profile": "Profil",
+    "name": "Nom",
+    "email": "Email",
+    "role": "Rôle",
+    "phone": "Téléphone",
+    "logout": "Se déconnecter",
+    "loadingProfile": "Chargement du profil...",
+    "cancel": "Annuler"
+  }
+}

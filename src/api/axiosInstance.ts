@@ -1,9 +1,10 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useAuthStore } from '../store/useAuthStore';
+import Config from 'react-native-config';
 
 const axiosInstance = axios.create({
-  baseURL: 'https://dummyjson.com',
+  baseURL: Config.BASE_URL,
 });
 
 axiosInstance.interceptors.request.use(

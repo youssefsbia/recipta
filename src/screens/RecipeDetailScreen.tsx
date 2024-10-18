@@ -29,10 +29,9 @@ const RecipeDetailScreen = ({ route }) => {
 
   return (
     <View className="p-4">
-      <Image source={{ uri: recipe.image }} style={{ height: 300 }} />
-      <Text className="text-2xl font-bold">{recipe.name}</Text>
-      <Text className="mt-4">{recipe.description}</Text>
-      {/* Add more details as needed */}
+      <Image source={{ uri: recipe.image }} alt={recipe.name} style={{ height: 300 }} />
+      <Text className="text-2xl font-bold mt-5">{recipe.name}</Text>
+      <Text className="mt-4">{recipe.cuisine}</Text>
     </View>
   );
 };
